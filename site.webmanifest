@@ -1,0 +1,12 @@
+{
+  "name": "MC — BIM Technician & Civil Engineer",
+  "short_name": "MC",
+  "description": "London-based BIM Technician and Civil Engineer. Structural detailing, surveying and BIM coordination.",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "theme_color": "#09090b",
+  "background_color": "#09090b",
+  "display": "standalone",
+  "start_url": "/"
+}

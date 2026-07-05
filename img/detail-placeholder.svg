@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1131" viewBox="0 0 1600 1131">
+  <rect width="1600" height="1131" fill="#ffffff"/>
+  <rect x="24" y="24" width="1552" height="1083" fill="none" stroke="#DCDCD7" stroke-width="3" stroke-dasharray="14 10"/>
+  <g fill="#3F3F46" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="800" y="540" font-size="52" font-weight="bold">Typical Detail</text>
+    <text x="800" y="610" font-size="34" fill="#71717A">Press Ctrl + E, then click this tile to upload your drawing</text>
+  </g>
+</svg>

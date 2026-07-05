@@ -1,0 +1,51 @@
+/* ===========================================================
+   In-browser Edit Mode (drafting tool, local to this browser)
+   Toggle: Cmd/Ctrl + E  ·  or load with #edit
+   =========================================================== */
+
+.mc-editbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 10000;
+  display: none; align-items: center; gap: .6rem; flex-wrap: wrap;
+  padding: .55rem .9rem;
+  background: #0b0b0e; color: #fff;
+  font-family: "Space Grotesk", system-ui, sans-serif; font-size: .85rem;
+  box-shadow: 0 6px 24px -10px rgba(0,0,0,.7);
+}
+body.mc-editing .mc-editbar { display: flex; }
+body.mc-editing { padding-top: 48px; }           /* keep nav clear of the bar */
+body.mc-editing .nav { top: 48px; }
+
+.mc-editbar__brand { font-weight: 600; letter-spacing: .02em; margin-right: .4rem; }
+.mc-editbar__hint { color: rgba(255,255,255,.55); margin-right: auto; }
+.mc-editbar button {
+  font: inherit; font-weight: 600; cursor: pointer;
+  background: rgba(255,255,255,.1); color: #fff;
+  border: 1px solid rgba(255,255,255,.18); border-radius: 8px;
+  padding: .38rem .7rem; transition: background .2s, border-color .2s;
+}
+.mc-editbar button:hover { background: rgba(255,255,255,.2); }
+.mc-editbar button.mc-primary { background: #2563eb; border-color: #2563eb; }
+.mc-editbar button.mc-primary:hover { background: #1d4ed8; }
+.mc-editbar button.mc-on { background: #2563eb; border-color: #2563eb; }
+.mc-editbar__status { font-size: .82rem; color: rgba(255,255,255,.6); margin-left: .2rem; }
+.mc-editbar__status.is-ok { color: #86efac; }
+.mc-editbar__status.is-err { color: #fca5a5; }
+
+/* editable text affordances */
+body.mc-editing .mc-ed { outline: 1.5px dashed rgba(37,99,235,.45); outline-offset: 3px; border-radius: 2px; cursor: text; transition: outline-color .15s, background .15s; }
+body.mc-editing .mc-ed:hover { outline-color: rgba(37,99,235,.9); background: rgba(37,99,235,.06); }
+body.mc-editing .mc-ed:focus { outline: 2px solid #2563eb; background: rgba(37,99,235,.08); }
+
+/* replaceable images */
+body.mc-editing .mc-imgedit { cursor: pointer; }
+body.mc-editing .mc-imgedit:hover { outline: 3px dashed #2563eb; outline-offset: -3px; }
+
+/* reveal-text editing sub-mode: surface the BIM / role lines for editing */
+body.mc-reveal-edit .hero__reveal { opacity: 1 !important; pointer-events: auto !important; }
+body.mc-reveal-edit .hero__reveal::before {
+  content: "Editing reveal text — click ‘Reveal text’ again to hide";
+  position: absolute; top: 12px; left: 0; right: 0; text-align: center;
+  font-family: "Space Grotesk"; font-size: .8rem; letter-spacing: .04em;
+  color: #2563eb; pointer-events: none;
+}
+body.mc-reveal-edit .hero__reveal-word { -webkit-text-fill-color: #111 !important; color: #111 !important; background: none !important; }

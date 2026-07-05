@@ -1,0 +1,42 @@
+/* ===========================================================
+   Project case-study page
+   =========================================================== */
+.pp { padding-top: clamp(4.5rem, 11vh, 7rem); }
+
+.pp-hero { max-width: 900px; margin: 0 auto; padding: 2rem clamp(1.2rem, 5vw, 3rem) clamp(1.6rem, 4vw, 2.6rem); text-align: center; }
+.pp-back { display: inline-flex; align-items: center; gap: .45rem; font-size: .9rem; font-weight: 500; color: var(--ink-3); margin-bottom: 1.6rem; transition: gap .25s var(--ease), color .25s var(--ease); }
+.pp-back:hover { color: var(--ink); gap: .7rem; }
+.pp-tag { font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; color: var(--blue); margin-bottom: 1rem; }
+.pp-title { font-size: clamp(2.4rem, 6vw, 4.6rem); letter-spacing: -0.03em; line-height: 1; }
+.pp-intro { font-size: clamp(1.05rem, 2.2vw, 1.38rem); color: var(--ink-3); max-width: 58ch; margin: 1.4rem auto 0; line-height: 1.55; }
+
+.pp-meta { display: flex; gap: clamp(1.4rem, 4vw, 3rem); justify-content: center; flex-wrap: wrap; margin-top: 2.2rem; padding-top: 1.7rem; border-top: 1px solid var(--line); }
+.pp-meta div { display: flex; flex-direction: column; align-items: center; }
+.pp-meta__k { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.pp-meta__v { font-family: "Archivo"; font-weight: 700; font-size: 1.05rem; margin-top: .25rem; }
+
+/* contain (not cover) so uploaded drawings/photos always show their full extents;
+   JS sets aspect-ratio from the real image so the frame adjusts automatically */
+.pp-hero-img { height: clamp(280px, 52vw, 640px); max-height: 82vh; margin: 0 auto; max-width: 1400px; background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #fff; }
+
+.pp-body { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.pp-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.pp-scope h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 1rem; letter-spacing: -0.02em; }
+.pp-scope ul { list-style: none; }
+.pp-scope li { padding: 1rem 0 1rem 1.9rem; border-top: 1px solid var(--line); position: relative; color: var(--ink-2); font-size: 1.02rem; }
+.pp-scope li::before { content: ""; position: absolute; left: 2px; top: 1.45rem; width: 8px; height: 8px; border-right: 2px solid var(--blue); border-bottom: 2px solid var(--blue); transform: rotate(-45deg); }
+
+.pp-outcomes { display: grid; gap: 1rem; }
+.pp-out { background: var(--paper-2); border-radius: 16px; padding: 1.3rem 1.6rem; }
+.pp-out b { display: block; font-family: "Archivo"; font-weight: 800; font-size: clamp(1.7rem, 4vw, 2.5rem); color: var(--blue); letter-spacing: -0.02em; line-height: 1; }
+.pp-out span { display: block; font-size: .9rem; color: var(--ink-3); margin-top: .4rem; }
+
+.pp-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(.8rem, 2vw, 1.4rem); margin-top: clamp(2.5rem, 6vw, 4rem); align-items: start; }
+.pp-gallery div { aspect-ratio: 4 / 3; border-radius: 16px; background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #fff; }
+
+.pp-next { display: flex; flex-direction: column; align-items: center; gap: .5rem; text-align: center; padding: clamp(3rem, 7vw, 5rem) 1.2rem; background: var(--ink); color: var(--paper); }
+.pp-next span { font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: #93b4ff; }
+.pp-next strong { font-family: "Archivo"; font-weight: 800; font-size: clamp(1.8rem, 5vw, 3.2rem); letter-spacing: -0.02em; transition: color .3s var(--ease); }
+.pp-next:hover strong { color: #93b4ff; }
+
+@media (max-width: 760px) { .pp-grid { grid-template-columns: 1fr; } .pp-gallery { grid-template-columns: 1fr; } }

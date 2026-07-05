@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MC — Project</title>
+  <meta name="description" content="A case study from MC — BIM Technician & Civil Engineer, London." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css?v=6" />
+  <link rel="stylesheet" href="css/project.css?v=6" />
+  <link rel="stylesheet" href="css/editor.css?v=6" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav is-stuck" id="nav">
+    <a href="index.html" class="nav__brand" aria-label="MC, home">
+      <span class="nav__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      </span>
+      <span class="nav__name">MC</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#lab">Tools</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <a href="index.html#contact" class="btn btn--ghost nav__cta">
+      <span>Let's build</span>
+      <span class="btn__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </a>
+  </header>
+
+  <main class="pp">
+    <section class="pp-hero">
+      <a class="pp-back" href="index.html#work">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        All work
+      </a>
+      <p class="pp-tag" id="ppTag"></p>
+      <h1 class="pp-title" id="ppTitle"></h1>
+      <p class="pp-intro" id="ppIntro"></p>
+    </section>
+
+    <div class="pp-hero-img" id="ppHero" role="img" aria-label="Project hero image"></div>
+
+    <section class="pp-body wrap">
+      <div class="pp-grid">
+        <div class="pp-scope">
+          <h2>Scope of work</h2>
+          <ul id="ppScope"></ul>
+        </div>
+        <div class="pp-outcomes" id="ppOutcomes"></div>
+      </div>
+      <div class="pp-gallery" id="ppGallery"></div>
+    </section>
+
+    <a class="pp-next" id="ppNext" href="#">
+      <span>Next project</span>
+      <strong id="ppNextTitle"></strong>
+    </a>
+  </main>
+
+  <footer class="footer" style="background:var(--ink);color:rgba(247,247,245,0.45);">
+    <span>© 2026 Madhu Sudhan Chebrolu</span>
+    <span>BIM · Automation · Civil Engineer · London</span>
+  </footer>
+
+  <script src="js/projects-data.js?v=6" defer></script>
+  <script src="js/project.js?v=6" defer></script>
+  <script src="js/project-editor.js?v=6" defer></script>
+  <script src="js/fx.js?v=6" defer></script>
+  <script src="js/transitions.js?v=6" defer></script>
+</body>
+</html>

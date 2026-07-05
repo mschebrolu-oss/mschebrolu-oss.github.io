@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page not found · MC</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body { background: var(--ink); }
+    .nf { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 2rem 1.4rem; }
+    .nf__inner { max-width: 620px; }
+    .nf__code { font-family: "Archivo"; font-weight: 900; letter-spacing: -0.05em; line-height: .85;
+      font-size: clamp(7rem, 26vw, 18rem); color: transparent;
+      background: linear-gradient(180deg, #fff 0%, #4b6bd6 120%); -webkit-background-clip: text; background-clip: text; }
+    .nf__kicker { font-size: .8rem; letter-spacing: .26em; text-transform: uppercase; font-weight: 600; color: #93b4ff; margin-bottom: 1rem; }
+    .nf__title { font-family: "Archivo"; font-weight: 800; letter-spacing: -0.02em; font-size: clamp(1.6rem, 4vw, 2.6rem); color: var(--paper); margin-top: .6rem; }
+    .nf__text { color: rgba(247,247,245,0.6); font-size: 1.05rem; line-height: 1.55; margin: 1.1rem auto 2.2rem; max-width: 44ch; }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="nf">
+    <div class="nf__inner">
+      <p class="nf__kicker">Error 404</p>
+      <div class="nf__code" aria-hidden="true">404</div>
+      <h1 class="nf__title">This page was never issued.</h1>
+      <p class="nf__text">The drawing you're after has been moved, archived, or doesn't exist. Let's get you back to solid ground.</p>
+      <a href="index.html" class="btn btn--solid btn--lg">
+        <span>Back to home</span>
+        <span class="btn__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </main>
+  <script src="js/fx.js" defer></script>
+</body>
+</html>
