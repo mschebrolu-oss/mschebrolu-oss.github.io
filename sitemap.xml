@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Replace https://your-domain.com with your real domain before launch -->
+<!-- Replace https://mschebrolu-oss.github.io with your real domain before launch -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://your-domain.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://your-domain.com/project.html?slug=riverside-bridge</loc><priority>0.7</priority></url>
-  <url><loc>https://your-domain.com/project.html?slug=northgate-tower</loc><priority>0.7</priority></url>
-  <url><loc>https://your-domain.com/project.html?slug=m-corridor</loc><priority>0.7</priority></url>
-  <url><loc>https://your-domain.com/project.html?slug=eastside-depot</loc><priority>0.7</priority></url>
-  <url><loc>https://your-domain.com/project.html?slug=lowfield-reservoir</loc><priority>0.7</priority></url>
+  <url><loc>https://mschebrolu-oss.github.io/</loc><priority>1.0</priority></url>
+  <url><loc>https://mschebrolu-oss.github.io/project.html?slug=riverside-bridge</loc><priority>0.7</priority></url>
+  <url><loc>https://mschebrolu-oss.github.io/project.html?slug=northgate-tower</loc><priority>0.7</priority></url>
+  <url><loc>https://mschebrolu-oss.github.io/project.html?slug=m-corridor</loc><priority>0.7</priority></url>
+  <url><loc>https://mschebrolu-oss.github.io/project.html?slug=eastside-depot</loc><priority>0.7</priority></url>
+  <url><loc>https://mschebrolu-oss.github.io/project.html?slug=lowfield-reservoir</loc><priority>0.7</priority></url>
 </urlset>
