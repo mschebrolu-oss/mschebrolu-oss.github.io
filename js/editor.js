@@ -25,7 +25,20 @@
     ".contact__title", ".contact__sub", ".contact__details", ".footer span"
   ];
 
-  const loadMap = (k) => { try { return JSON.parse(localStorage.getItem(k) || "{}"); } catch { return {}; } };
+  const loadMap = (k) => {
+    try {
+      const map = JSON.parse(localStorage.getItem(k) || "{}");
+      // Bring previously saved role copy in this browser up to date.
+      if (k === TKEY) {
+        for (const key of [".about__text#0", ".statement__label#2"]) {
+          if (typeof map[key] === "string") {
+            map[key] = map[key].replace(/Trainee Technician/g, "Digital Engineer").replace(/SD Engineers/g, "McGee").replace(/Digital Enginner/g, "Digital Engineer");
+          }
+        }
+      }
+      return map;
+    } catch { return {}; }
+  };
   const saveMap = (k, m) => {
     try { localStorage.setItem(k, JSON.stringify(m)); return true; }
     catch { alert("This browser's storage is full — large images can't be saved locally. They still show now, but won't survive a reload. Use Export HTML to keep them."); return false; }
