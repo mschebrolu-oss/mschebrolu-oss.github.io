@@ -46,6 +46,24 @@
 
   <link rel="stylesheet" href="css/styles.css?v=6" />
   <link rel="stylesheet" href="css/editor.css?v=6" />
+  <style id="preview-hero-layout">
+    /* Keep the building visible above the hero copy on the draft page. */
+    .hero__building-img { margin-bottom: clamp(8rem, 22svh, 17rem); }
+    .hero__inner { top: auto; bottom: clamp(5rem, 10svh, 8rem); }
+    .hero__eyebrow { margin-bottom: clamp(.6rem, 1.5svh, 1rem); }
+    .hero__cta { margin-top: clamp(1.1rem, 2.3svh, 1.75rem); }
+    .hero__scroll { bottom: 1rem; }
+    @media (max-width: 600px) {
+      .hero__building-img {
+        width: min(95vw, 85svh);
+        margin-bottom: clamp(16rem, 42svh, 23rem);
+      }
+      .hero__inner { bottom: clamp(3.75rem, 8svh, 5rem); }
+      .hero__brand { font-size: clamp(4rem, 16vw, 6rem); }
+      .hero__tagline { font-size: clamp(.95rem, 4.1vw, 1.25rem); }
+      .hero__cta .btn { padding: .72rem 1rem; font-size: .86rem; }
+    }
+  </style>
 </head>
 <body class="is-loading">
   <div class="draft-notice" role="note" style="position:fixed;right:12px;bottom:12px;z-index:9999;background:#09090b;color:#fff;border:1px solid #555;border-radius:12px;padding:10px 14px;font:500 12px/1.4 Arial,sans-serif;box-shadow:0 4px 18px #0004;pointer-events:none">Draft preview · Press Ctrl+E to edit · Changes stay in this browser</div>
