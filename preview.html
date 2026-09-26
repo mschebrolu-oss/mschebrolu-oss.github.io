@@ -51,6 +51,18 @@
     .hero__building-img { margin-bottom: clamp(8rem, 22svh, 17rem); }
     .hero__inner { top: auto; bottom: clamp(5rem, 10svh, 8rem); }
     .hero__eyebrow { margin-bottom: clamp(.6rem, 1.5svh, 1rem); }
+    @media (min-width: 601px) {
+      .hero__eyebrow {
+        display: inline-block;
+        padding: .45rem .8rem;
+        border-radius: 999px;
+        background: rgba(247, 247, 245, .72);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        font-size: clamp(.65rem, 1.05vw, .8rem);
+        letter-spacing: .22em;
+      }
+    }
     .hero__cta { margin-top: clamp(1.1rem, 2.3svh, 1.75rem); }
     .hero__scroll { bottom: 1rem; }
     @media (max-width: 600px) {
