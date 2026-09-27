@@ -47,10 +47,31 @@
   <link rel="stylesheet" href="css/styles.css?v=6" />
   <link rel="stylesheet" href="css/editor.css?v=6" />
   <style id="preview-hero-layout">
-    /* Keep the building visible above the hero copy on the draft page. */
+    /* The draft reads as one scroll: a shorter reveal, shared colour, tighter sections. */
+    .hero { height: 205vh; height: 205svh; }
     .hero__building-img { margin-bottom: clamp(8rem, 22svh, 17rem); }
     .hero__inner { top: auto; bottom: clamp(5rem, 10svh, 8rem); }
+    .hero__copy { transform: translateY(-clamp(5rem, 11svh, 9rem)); }
     .hero__eyebrow { margin-bottom: clamp(.6rem, 1.5svh, 1rem); }
+    .hero__reveal {
+      background:
+        radial-gradient(60% 50% at 50% 50%, rgba(247,247,245,.5), rgba(247,247,245,0) 70%),
+        var(--paper);
+    }
+    .statement { padding-top: clamp(2.5rem, 5vw, 4.5rem); padding-bottom: clamp(4rem, 8vw, 7rem); }
+    .process, .work, .lab, .about, .contact { padding-block: clamp(4rem, 8vw, 7rem); }
+    .process {
+      padding-top: clamp(9rem, 14vw, 12rem);
+      background: linear-gradient(to bottom, var(--paper), var(--ink) 8rem, var(--ink));
+    }
+    .work {
+      padding-top: clamp(9rem, 14vw, 12rem);
+      background: linear-gradient(to bottom, var(--ink), var(--paper) 8rem, var(--paper));
+    }
+    .contact {
+      padding-top: clamp(9rem, 14vw, 12rem);
+      background: linear-gradient(to bottom, var(--paper), var(--ink) 8rem, var(--ink));
+    }
     @media (min-width: 601px) {
       .hero__eyebrow {
         display: inline-block;
@@ -71,6 +92,7 @@
         margin-bottom: clamp(16rem, 42svh, 23rem);
       }
       .hero__inner { bottom: clamp(3.75rem, 8svh, 5rem); }
+      .hero__copy { transform: translateY(-clamp(2rem, 5svh, 3.5rem)); }
       .hero__brand { font-size: clamp(4rem, 16vw, 6rem); }
       .hero__tagline { font-size: clamp(.95rem, 4.1vw, 1.25rem); }
       .hero__cta .btn { padding: .72rem 1rem; font-size: .86rem; }
@@ -133,9 +155,11 @@
 
       <!-- Title (rises & fades on scroll) -->
       <div class="hero__inner" id="heroContent">
-        <p class="hero__eyebrow">BIM · Automation · Digital Construction · London</p>
-        <h1 class="hero__brand">MC</h1>
-        <p class="hero__tagline">Automation · BIM · Workflows</p>
+        <div class="hero__copy">
+          <p class="hero__eyebrow">BIM · Automation · Digital Construction · London</p>
+          <h1 class="hero__brand">MC</h1>
+          <p class="hero__tagline">Automation · BIM · Workflows</p>
+        </div>
 
         <div class="hero__cta">
           <a href="#work" class="btn btn--solid">
