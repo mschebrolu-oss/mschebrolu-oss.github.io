@@ -54,6 +54,8 @@
     .hero__copy { position: relative; top: -11svh; }
     .hero__eyebrow { margin-bottom: clamp(.6rem, 1.5svh, 1rem); }
     .hero__reveal {
+      place-items: end center;
+      padding-bottom: 15svh;
       background:
         radial-gradient(60% 50% at 50% 50%, rgba(247,247,245,.5), rgba(247,247,245,0) 70%),
         var(--paper);
@@ -88,10 +90,22 @@
     .hero__scroll { bottom: 1rem; }
     @media (max-width: 600px) {
       .hero__building-img {
-        width: min(95vw, 85svh);
-        margin-bottom: clamp(16rem, 42svh, 23rem);
+        width: min(145vw, 85svh);
+        max-width: none;
+        margin-bottom: 32svh;
       }
       .hero__inner { bottom: clamp(3.75rem, 8svh, 5rem); }
+      .hero__eyebrow {
+        display: inline-block;
+        max-width: calc(100vw - 2rem);
+        padding: .35rem .55rem;
+        border-radius: 1rem;
+        background: rgba(247,247,245,.82);
+        font-size: .64rem;
+        line-height: 1.45;
+        letter-spacing: .12em;
+      }
+      .draft-notice { display: none !important; }
       .hero__copy { top: -5svh; }
       .hero__brand { font-size: clamp(4rem, 16vw, 6rem); }
       .hero__tagline { font-size: clamp(.95rem, 4.1vw, 1.25rem); }
