@@ -79,19 +79,19 @@ section[id] { scroll-margin-top: 80px; }
 }
 
 /* Personal working notes: plain type, open space and fine rules. */
-.process.method-notes { background: #efeeea; color: var(--ink); overflow: visible; }
+.process.method-notes { background: var(--paper-2); color: var(--ink); overflow: visible; }
 .method-notes__layout { display: grid; grid-template-columns: .85fr 1.3fr; gap: clamp(3rem, 7vw, 7rem); align-items: start; }
-.method-notes .section-kicker { color: #64635e; letter-spacing: .14em; }
+.method-notes .section-kicker { color: var(--blue); letter-spacing: .14em; }
 .method-head h2 { font-size: clamp(2.4rem, 4.4vw, 4rem); line-height: 1.08; letter-spacing: -.045em; font-weight: 600; }
-.method-head > p:last-child { color: #5c5b56; font-size: 1rem; line-height: 1.8; max-width: 34ch; margin-top: 1.5rem; }
+.method-head > p:last-child { color: var(--ink-3); font-size: 1rem; line-height: 1.8; max-width: 34ch; margin-top: 1.5rem; }
 .method-note { display: grid; grid-template-columns: 1.7rem 1fr; gap: 1.1rem; padding: 1.65rem 0 2.5rem; border-top: 1px solid #c6c5be; }
 .method-note:last-child { padding-bottom: 0; }
-.method-note__number { font-size: .75rem; color: #76756d; padding-top: .3rem; font-variant-numeric: tabular-nums; }
+.method-note__number { font-size: .75rem; color: var(--blue); padding-top: .3rem; font-variant-numeric: tabular-nums; }
 .method-note h3 { font-size: clamp(1.4rem, 2.1vw, 1.75rem); font-weight: 600; line-height: 1.2; letter-spacing: -.025em; margin-bottom: 1rem; }
-.method-note p { color: #50504b; font-size: 1rem; line-height: 1.8; max-width: 54ch; }
+.method-note p { color: var(--ink-3); font-size: 1rem; line-height: 1.8; max-width: 54ch; }
 .method-note__software { display: flex; flex-wrap: wrap; gap: .45rem 1.1rem; list-style: none; margin-top: 1.25rem; max-width: 50ch; }
-.method-note__software li { font-size: .78rem; color: #69685f; }
-.method-note .method-note__aside { color: #77766e; font-size: .82rem; margin-top: 1rem; }
+.method-note__software li { font-size: .78rem; color: var(--blue); }
+.method-note .method-note__aside { color: var(--ink-3); font-size: .82rem; margin-top: 1rem; }
 @media (max-width: 760px) {
   .method-notes__layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .method-head h2 br { display: none; }
@@ -100,3 +100,14 @@ section[id] { scroll-margin-top: 80px; }
 @media (max-width: 420px) {
   .method-note { grid-template-columns: 1.1rem 1fr; gap: .8rem; }
 }
+
+/* One type family; consistent blue accents across the portfolio. */
+:root { --font-site: "Archivo", sans-serif; --blue-soft: #93b4ff; }
+body, button, input, textarea, select { font-family: var(--font-site); }
+.method-head h2, .section-title, .about__title, .pp-title { color: var(--blue); font-weight: 600; }
+.hero__role { color: var(--blue-deep); }
+.method-note h3 { font-weight: 600; }
+.contact__title { color: var(--blue-soft); font-weight: 600; }
+.section-kicker, .pp-tag { color: var(--blue); }
+.contact .section-kicker, .pp-next span { color: var(--blue-soft); }
+.pp-next strong { font-weight: 600; }

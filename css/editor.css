@@ -8,7 +8,7 @@
   display: none; align-items: center; gap: .6rem; flex-wrap: wrap;
   padding: .55rem .9rem;
   background: #0b0b0e; color: #fff;
-  font-family: "Space Grotesk", system-ui, sans-serif; font-size: .85rem;
+  font-family: "Archivo", system-ui, sans-serif; font-size: .85rem;
   box-shadow: 0 6px 24px -10px rgba(0,0,0,.7);
 }
 body.mc-editing .mc-editbar { display: flex; }
@@ -45,7 +45,7 @@ body.mc-reveal-edit .hero__reveal { opacity: 1 !important; pointer-events: auto 
 body.mc-reveal-edit .hero__reveal::before {
   content: "Editing reveal text — click ‘Reveal text’ again to hide";
   position: absolute; top: 12px; left: 0; right: 0; text-align: center;
-  font-family: "Space Grotesk"; font-size: .8rem; letter-spacing: .04em;
+  font-family: "Archivo"; font-size: .8rem; letter-spacing: .04em;
   color: #2563eb; pointer-events: none;
 }
 body.mc-reveal-edit .hero__reveal-word { -webkit-text-fill-color: #111 !important; color: #111 !important; background: none !important; }

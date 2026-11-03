@@ -20,7 +20,7 @@ powers the Edit Mode **Save** button. If you don't need Save, any static server 
 
 ## Design system
 - **Style:** Liquid-glass / atmospheric editorial
-- **Type:** Archivo (display) + Space Grotesk (body) — via Google Fonts
+- **Type:** Archivo throughout — via Google Fonts
 - **Palette:** near-black `#09090B` / paper `#F7F7F5` / electric blue `#2563EB`
 
 ## Motion choreography (as specced)
