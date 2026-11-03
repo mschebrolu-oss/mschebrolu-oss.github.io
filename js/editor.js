@@ -11,12 +11,28 @@
   const TKEY = "mc-edit:text:v1";
   const IKEY = "mc-edit:img:v1";
 
+  const CONTENT_REVISION = 'portfolio-mcp-2026-11';
+  const revisionKey = TKEY + ':revision';
+  if (localStorage.getItem(revisionKey) !== CONTENT_REVISION) {
+    try {
+      const map = JSON.parse(localStorage.getItem(TKEY) || '{}');
+      const revised = [".hero__tagline",".statement__",".chevron__",".contact__details",".lab__",".tool__",".about__text",".about__skills"];
+      for (const key of Object.keys(map)) if (revised.some(prefix => key.startsWith(prefix))) delete map[key];
+      if (map['.card__meta#1']) map['.card__meta#1'] = map['.card__meta#1'].replace(/Commerical/g, 'Commercial');
+      localStorage.setItem(TKEY, JSON.stringify(map));
+      const images = JSON.parse(localStorage.getItem(IKEY) || '{}');
+      delete images['card#5'];
+      localStorage.setItem(IKEY, JSON.stringify(images));
+      localStorage.setItem(revisionKey, CONTENT_REVISION);
+    } catch {}
+  }
+
   // text elements that become editable
   const TEXT_SELECTORS = [
-    ".nav__name", ".hero__eyebrow", ".hero__brand", ".hero__tagline", ".hero__reveal-word",
+    ".nav__name", ".hero__eyebrow", ".hero__brand", ".hero__identity", ".hero__role", ".hero__reveal-word",
     ".statement__lead span", ".statement__num", ".statement__label",
     ".section-kicker", ".section-title", ".section-desc",
-    ".chevron__step", ".chevron__body h3", ".chevron__body p",
+    ".method-head h2", ".method-head > p:last-child", ".method-step h3", ".method-step p",
     ".card__tag", ".card__title", ".card__meta",
     ".lab__kicker", ".lab__title", ".lab__desc",
     ".tool__tag", ".tool__title", ".tool__desc", ".tool__tech",

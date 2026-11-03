@@ -44,6 +44,7 @@
       const mi = { ...(p.img || {}), ...loadMap(IKEY) };
       try { localStorage.setItem(TKEY, JSON.stringify(mt)); localStorage.setItem(IKEY, JSON.stringify(mi)); } catch {}
       applyText(mt); applyImages(mi);
+      document.dispatchEvent(new Event("portfolio:content-ready"));
     })
     .catch(() => {});
 

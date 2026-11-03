@@ -1,5 +1,5 @@
 /* ===========================================================
-   Marcus Hale Portfolio — motion choreography
+   MC Portfolio — motion choreography
    - Hero dispersal on scroll  (fog breaks, FIND word lifts)
    - Cloud parallax (rAF, transform only)
    - Staggered fade-and-rise reveals (IntersectionObserver)
@@ -71,8 +71,8 @@
       if (heroBuilding) {
         const zp = range(p, 0, 0.9);
         const e = 1 - Math.pow(1 - zp, 2);               // easeOut zoom
-        const s = 0.92 + 0.22 * e;                       // 0.92 -> 1.14
-        heroBuilding.style.transform = `scale(${s})`;
+        const s = 1 + 0.12 * e;                       // 0.92 -> 1.14
+        heroBuilding.style.transform = `translate3d(${e * -8}px, ${e * -12}px, 0) scale(${s})`;
       }
       // 2) title lifts + fades from the very first scroll
       if (heroContent) {
@@ -132,7 +132,7 @@
           obs.unobserve(el);
         }
       });
-    }, { rootMargin: "0px 0px -20% 0px", threshold: 0.1 });
+    }, { rootMargin: "0px 0px -7% 0px", threshold: 0.08 });
 
     revealEls.forEach((el) => io.observe(el));
 
