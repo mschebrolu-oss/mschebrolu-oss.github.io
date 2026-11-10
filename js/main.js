@@ -114,6 +114,23 @@
   if (heroBuildingImg && !heroBuildingImg.complete) heroBuildingImg.addEventListener("load", onScroll);
   render();
 
+  /* Cinematic hero loop: load after the page is ready, skip on reduced motion / data saver,
+     fade in only once frames are actually playing, pause while the hero is off-screen. */
+  const heroVideo = document.getElementById("heroVideo");
+  const saveData = navigator.connection && navigator.connection.saveData;
+  if (heroVideo && !reduceMotion && !saveData) {
+    heroVideo.addEventListener("playing", () => heroVideo.classList.add("is-playing"), { once: true });
+    const start = () => { heroVideo.preload = "auto"; heroVideo.play().catch(() => {}); };
+    if (document.readyState === "complete") start(); else window.addEventListener("load", start, { once: true });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) heroVideo.play().catch(() => {}); else heroVideo.pause();
+      }).observe(heroVideo);
+    }
+  } else if (heroVideo) {
+    heroVideo.remove();
+  }
+
   /* ----------------------------------------------------------
      2. STAGGERED FADE-AND-RISE REVEALS
         Trigger when element enters bottom 20% of viewport.

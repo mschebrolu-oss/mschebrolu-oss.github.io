@@ -207,6 +207,10 @@ body.is-loading { overflow: hidden; }
     linear-gradient(to bottom, rgba(0,0,0,0) 0%, #000 12%, #000 84%, rgba(0,0,0,0) 100%);
   mask-composite: intersect;
 }
+/* video sits exactly on top of the still in the same grid cell, then fades in */
+.hero__building > .hero__building-img { grid-area: 1 / 1; }
+.hero__building-video { opacity: 0; transition: opacity 1.2s cubic-bezier(.25,1,.5,1); }
+.hero__building-video.is-playing { opacity: 1; }
 
 /* --- Cinematic grade: tonal duotone + vignette + film grain --- */
 .hero__tone {
@@ -288,7 +292,7 @@ body.is-loading { overflow: hidden; }
   /* dark wash blended over the photo so the letters stay legible on light skies */
   background-image:
     linear-gradient(rgba(9, 9, 11, 0.72), rgba(9, 9, 11, 0.72)),
-    url("../img/hero-building.png");
+    url("../img/hero-building.webp");
   background-blend-mode: multiply;
   background-size: cover; background-position: center 40%;
   -webkit-background-clip: text; background-clip: text;
@@ -560,5 +564,6 @@ body:not(.pt-entering) main, body:not(.pt-entering) section {
   .hero { height: 100svh !important; }
   .hero__inner, .hero__reveal-word { animation: none !important; }
   .hero__building { transform: none !important; }
+  .hero__building-video { display: none !important; }
   .hero__reveal { display: none !important; }
 }

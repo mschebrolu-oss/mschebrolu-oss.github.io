@@ -73,7 +73,8 @@
   function applyImages(doc, map) {
     if (map["hero-building"]) {
       const u = map["hero-building"];
-      doc.querySelectorAll(".hero__building-img").forEach((i) => i.setAttribute("src", u));
+      doc.querySelectorAll("img.hero__building-img").forEach((i) => i.setAttribute("src", u));
+      doc.querySelectorAll(".hero__building-video").forEach((v) => v.remove());
       const rw = doc.querySelector(".hero__reveal-word");
       // keep the dark wash so the reveal words stay legible on light images
       if (rw) rw.style.backgroundImage = `linear-gradient(rgba(9,9,11,0.72), rgba(9,9,11,0.72)), url("${u}")`;
