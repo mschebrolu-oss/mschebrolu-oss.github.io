@@ -131,6 +131,39 @@
     heroVideo.remove();
   }
 
+  /* Project-card motion clips: play on hover (mouse) or while mostly in view (touch).
+     The clip only downloads the first time it is needed. */
+  const cardVideos = Array.from(document.querySelectorAll(".card__video"));
+  if (cardVideos.length && !reduceMotion && !saveData) {
+    const playCard = (v) => {
+      if (!v.src) { v.src = v.dataset.src; v.preload = "auto"; }
+      v.play().catch(() => {});
+    };
+    cardVideos.forEach((v) => {
+      const card = v.closest(".card");
+      v.addEventListener("playing", () => card.classList.add("is-playing"));
+      v.addEventListener("pause", () => card.classList.remove("is-playing"));
+      v.addEventListener("error", () => v.remove());
+    });
+    const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (canHover) {
+      cardVideos.forEach((v) => {
+        const card = v.closest(".card");
+        card.addEventListener("mouseenter", () => playCard(v));
+        card.addEventListener("mouseleave", () => v.pause());
+        card.addEventListener("focusin", () => playCard(v));
+        card.addEventListener("focusout", () => v.pause());
+      });
+    } else if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { const v = e.target.querySelector(".card__video"); if (!v) return; if (e.isIntersecting) playCard(v); else v.pause(); });
+      }, { threshold: 0.6 });
+      cardVideos.forEach((v) => io.observe(v.closest(".card")));
+    }
+  } else {
+    cardVideos.forEach((v) => v.remove());
+  }
+
   /* ----------------------------------------------------------
      2. STAGGERED FADE-AND-RISE REVEALS
         Trigger when element enters bottom 20% of viewport.

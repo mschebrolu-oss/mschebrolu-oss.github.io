@@ -27,6 +27,18 @@
     } catch {}
   }
 
+  // one-time refresh: drop cached card/about images so the new studio covers + headshot show
+  const IMG_REVISION = 'premium-covers-2026-11';
+  const imgRevisionKey = IKEY + ':revision';
+  try {
+    if (localStorage.getItem(imgRevisionKey) !== IMG_REVISION) {
+      const images = JSON.parse(localStorage.getItem(IKEY) || '{}');
+      for (const k of Object.keys(images)) if (k.startsWith('card#') || k === 'about') delete images[k];
+      localStorage.setItem(IKEY, JSON.stringify(images));
+      localStorage.setItem(imgRevisionKey, IMG_REVISION);
+    }
+  } catch {}
+
   // text elements that become editable
   const TEXT_SELECTORS = [
     ".nav__name", ".hero__eyebrow", ".hero__brand", ".hero__identity", ".hero__role", ".hero__reveal-word",

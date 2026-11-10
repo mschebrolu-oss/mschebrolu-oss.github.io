@@ -389,9 +389,12 @@ body.is-loading { overflow: hidden; }
    ========================================================= */
 /* masonry columns — each card takes the exact shape of its image (no empty bands) */
 .grid { columns: 3; column-gap: clamp(.9rem, 1.8vw, 1.5rem); }
-.card { position: relative; overflow: hidden; border-radius: 18px; cursor: pointer; background: #fff; display: block; break-inside: avoid; margin-bottom: clamp(.9rem, 1.8vw, 1.5rem); aspect-ratio: 4 / 3; /* fallback until the image reports its real ratio */ }
-/* contain (not cover) so uploaded drawings/renders always show their full extents */
-.card__img { position: absolute; inset: 0; background-size: contain; background-repeat: no-repeat; background-position: center; transition: transform .9s var(--ease), filter .6s var(--ease); filter: grayscale(.2) brightness(.92); }
+/* every card shares one 4:3 frame (the studio covers are composed for it) — a uniform grid reads as curated */
+.card { position: relative; overflow: hidden; border-radius: 18px; cursor: pointer; background: #0B0B0E; display: block; break-inside: avoid; margin-bottom: clamp(.9rem, 1.8vw, 1.5rem); aspect-ratio: 4 / 3 !important; }
+.card__img { position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat; background-position: center; transition: transform .9s var(--ease), filter .6s var(--ease); filter: grayscale(.2) brightness(.92); }
+/* hover motion clip: sits over the cover, fades in once frames are playing */
+.card__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .6s var(--ease); pointer-events: none; }
+.card.is-playing .card__video { opacity: 1; }
 .card::after { content:""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(9,9,11,0) 40%, rgba(9,9,11,0.78) 100%); opacity: .9; transition: opacity .5s var(--ease); }
 .card:hover .card__img { transform: scale(1.06); filter: grayscale(0) brightness(1); }
 .card:hover { box-shadow: 0 40px 70px -40px rgba(0,0,0,0.6); }
@@ -564,6 +567,6 @@ body:not(.pt-entering) main, body:not(.pt-entering) section {
   .hero { height: 100svh !important; }
   .hero__inner, .hero__reveal-word { animation: none !important; }
   .hero__building { transform: none !important; }
-  .hero__building-video { display: none !important; }
+  .hero__building-video, .card__video { display: none !important; }
   .hero__reveal { display: none !important; }
 }
