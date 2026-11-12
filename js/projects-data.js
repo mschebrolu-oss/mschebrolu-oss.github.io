@@ -1,6 +1,6 @@
 /* Portfolio case studies, including the published images and descriptions. */
 window.MC_PROJECTS = {
-  "riverside-bridge": {
+  "garden-house": {
     "title": "The Garden House",
     "tag": "Temporary Works",
     "hero": "img/portfolio/3ab419eb2466e9e4.png",
@@ -21,16 +21,12 @@ window.MC_PROJECTS = {
         "Temporary works fully modelled"
       ],
       [
-        "0",
-        "Queries raised at erection"
-      ],
-      [
         "Phased",
         "Safe demolition sequence"
       ]
     ]
   },
-  "northgate-tower": {
+  "brick-street": {
     "title": "Brick Street",
     "tag": "High-rise · Commercial",
     "hero": "img/portfolio/5f147663938d2d26.png",
@@ -53,14 +49,10 @@ window.MC_PROJECTS = {
       [
         "Federated",
         "Single coordinated model"
-      ],
-      [
-        "On time",
-        "Construction issue delivered"
       ]
     ]
   },
-  "m-corridor": {
+  "london-metropolitan-works": {
     "title": "London Metropolitan MEP works",
     "tag": "Refurbishment",
     "hero": "img/portfolio/391a455cf05dd00f.png",
@@ -79,18 +71,10 @@ window.MC_PROJECTS = {
       [
         "3 stages",
         "Existing · demolition · proposed"
-      ],
-      [
-        "Minimal",
-        "Disruption to the occupied building"
-      ],
-      [
-        "As-built",
-        "Record drawings issued"
       ]
     ]
   },
-  "eastside-depot": {
+  "ragdale-hall": {
     "title": "Ragdale Hall",
     "tag": "Steel & Concrete Structures",
     "hero": "img/portfolio/f6b6c5a65f2f5610.webp",
@@ -113,14 +97,10 @@ window.MC_PROJECTS = {
       [
         "Steel + RC",
         "Mixed-frame package"
-      ],
-      [
-        "Coordinated",
-        "Clash-checked before issue"
       ]
     ]
   },
-  "lowfield-reservoir": {
+  "cricklewood-broadway": {
     "title": "Cricklewood Broadway",
     "tag": "Refurbishment",
     "hero": "img/portfolio/64abfac2248bf540.png",
@@ -171,18 +151,19 @@ window.MC_PROJECTS = {
     ],
     "outcomes": [
       [
-        "50+",
-        "Standard details in the library"
-      ],
-      [
-        "1 click",
-        "To place a detail on a sheet"
-      ],
-      [
         "Consistent",
         "Output across every project"
       ]
     ]
   }
 };
-window.MC_PROJECT_ORDER = ["riverside-bridge","northgate-tower","m-corridor","eastside-depot","lowfield-reservoir","typical-details"];
+window.MC_PROJECT_ORDER = ["garden-house","brick-street","london-metropolitan-works","ragdale-hall","cricklewood-broadway","typical-details"];
+
+/* The template's original addresses, kept so links already shared still land. */
+window.MC_OLD_SLUGS = {
+  "riverside-bridge": "garden-house",
+  "northgate-tower": "brick-street",
+  "m-corridor": "london-metropolitan-works",
+  "eastside-depot": "ragdale-hall",
+  "lowfield-reservoir": "cricklewood-broadway"
+};

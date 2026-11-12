@@ -57,7 +57,7 @@
   const curtain = document.createElement('div');
   curtain.className = 'pt-curtain';
   curtain.setAttribute('aria-hidden', 'true');
-  curtain.innerHTML = '<span class="pt-curtain__mark">MC</span>';
+  curtain.innerHTML = '<span class="pt-curtain__mark">MS</span>';
   document.body.appendChild(curtain);
   let leaving = false;
   document.addEventListener('click', event => {

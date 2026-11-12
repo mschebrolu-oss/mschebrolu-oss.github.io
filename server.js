@@ -1,5 +1,5 @@
 /* ===========================================================
-   Portable local server for the MC portfolio.
+   Portable local server for the MS portfolio.
    Works on Windows, macOS and Linux — no paths to edit.
 
    Run it from inside this folder:
@@ -61,4 +61,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": TYPES[path.extname(filePath).toLowerCase()] || "application/octet-stream", "Cache-Control": "no-store" });
     res.end(data);
   });
-}).listen(PORT, () => console.log(`MC portfolio running →  http://localhost:${PORT}`));
+}).listen(PORT, () => console.log(`MS portfolio running →  http://localhost:${PORT}`));

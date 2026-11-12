@@ -1,5 +1,5 @@
 /* ===========================================================
-   MC Portfolio — motion choreography
+   MS Portfolio — motion choreography
    - Hero dispersal on scroll  (fog breaks, FIND word lifts)
    - Cloud parallax (rAF, transform only)
    - Staggered fade-and-rise reveals (IntersectionObserver)

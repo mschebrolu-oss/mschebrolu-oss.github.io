@@ -2,12 +2,15 @@
 (() => {
   "use strict";
   const slug = new URLSearchParams(location.search).get("slug");
+  // Old template addresses forward to the project's own name.
+  const renamed = (window.MC_OLD_SLUGS || {})[slug];
+  if (renamed) { location.replace("project.html?slug=" + renamed); return; }
   const P = window.MC_PROJECTS || {};
   const data = P[slug];
   if (!data) { location.replace("index.html#work"); return; }
 
   const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-  document.title = "MC — " + data.title;
+  document.title = "MS — " + data.title;
 
   // size a tile to the image's real proportions so full extents always show
   const fit = (el, url) => {

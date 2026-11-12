@@ -1,4 +1,4 @@
-# MC — BIM Technician & Civil Engineer Portfolio
+# MS — BIM Technician & Civil Engineer Portfolio
 
 A premium, single-page, fully-animated portfolio. No build step, no framework — just
 `index.html`, `css/styles.css`, and `js/main.js`. Drop it on any static host
@@ -27,8 +27,8 @@ powers the Edit Mode **Save** button. If you don't need Save, any static server 
 | # | Effect | Where |
 |---|--------|-------|
 | 1 | **Pinned hero scroll-sequence** — a tall (`240vh`) hero with a `position: sticky` stage. Scroll progress `p` (0→1) drives the whole choreography in `render()` | `.hero`, `.hero__stage` |
-| 1 | **Full-bleed building + zoom** — the `MC` render fills the page; it zooms in (`BUILD_ZOOM`) as you scroll, with drifting clouds feathering the top & bottom edges | `#heroBuilding`, `.hero__clouds` |
-| 1 | **Title rise + cloud reveal** — "MC / Build with me" lifts and fades, clouds roll up and fill the frame, then the brand word **BUILD** forms out of the building image (background-clipped text) over white — blending straight into the next section | `#heroContent`, `#heroReveal` |
+| 1 | **Full-bleed building + zoom** — the `MS` render fills the page; it zooms in (`BUILD_ZOOM`) as you scroll, with drifting clouds feathering the top & bottom edges | `#heroBuilding`, `.hero__clouds` |
+| 1 | **Title rise + cloud reveal** — "MS / Build with me" lifts and fades, clouds roll up and fill the frame, then the brand word **BUILD** forms out of the building image (background-clipped text) over white — blending straight into the next section | `#heroContent`, `#heroReveal` |
 | 2 | **Staggered fade-and-rise** — `+30px → 0`, opacity `0 → 1`, `cubic-bezier(.25,1,.5,1)` 0.8s, triggered at bottom 20% of viewport | `.reveal` + `IntersectionObserver` |
 | 3 | **Chevron sequence** — `>>>` masks reveal left→right with staggered delay; hover scales image 1.05× and sharpens contrast | `.chevron` |
 | 4 | **Magnetic button arrows** — arrow nudges right on hover + pointer pull | `.btn`, magnetic handler in `main.js` |
